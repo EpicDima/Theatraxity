@@ -1,0 +1,29 @@
+<div>
+    <div id="profileTitle"></div>
+    <div>
+        <form name="profile">
+            <div class="profileRow">
+                <label id="emailLabel">
+                    <input name="email" type="email" minlength="6" maxlength="64" readonly>
+                </label>
+            </div>
+            <div id="passwordRow" class="profileRow hide">
+                <label id="passwordLabel">
+                    <input name="password" type="password" minlength="8" maxlength="64">
+                </label>
+            </div>
+            <div id="newPasswordRow" class="profileRow hide">
+                <label id="newPasswordLabel">
+                    <input name="newPassword" type="password" minlength="8" maxlength="64" value="">
+                </label>
+            </div>
+            <div id="roleRow" class="profileRow">
+                <div id="roleTitle"></div>
+                <div id="role"></div>
+            </div>
+            <div id="error"></div>
+        </form>
+        <button id="changeButton"></button>
+        <button id="deleteButton"></button>
+    </div>
+</div>
