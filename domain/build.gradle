@@ -1,0 +1,9 @@
+group "com.epicdima.theatraxity"
+version "1.0-SNAPSHOT"
+
+dependencies {
+    compileOnly project(":Lib:builder:annotation")
+    annotationProcessor project(":Lib:builder:compiler")
+}
+
+compileJava.options.compilerArgs << "-processor" << "com.epicdima.lib.builder.compiler.BuilderProcessor"

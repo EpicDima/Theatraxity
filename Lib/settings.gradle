@@ -1,0 +1,9 @@
+rootProject.name = "Lib"
+
+include "di"
+include "dal"
+include "controller"
+
+include "builder:annotation"
+include "builder:compiler"
+

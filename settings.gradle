@@ -1,0 +1,11 @@
+rootProject.name = "Theatraxity"
+
+include "Lib:di"
+include "Lib:dal"
+include "Lib:controller"
+include "Lib:builder"
+include "Lib:builder:annotation"
+include "Lib:builder:compiler"
+
+include "domain"
+include "dal"

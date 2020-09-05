@@ -1,0 +1,11 @@
+group "com.epicdima.theatraxity"
+version "1.0-SNAPSHOT"
+
+dependencies {
+    implementation project(":Lib:di")
+    implementation project(":Lib:dal")
+
+    implementation project(":domain")
+
+    implementation "mysql:mysql-connector-java:8.0.20"
+}

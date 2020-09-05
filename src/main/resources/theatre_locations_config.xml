@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<config>
+    <Location name="BALCONY_LEFT" ticketCost="10" rows="3" seats="5"/>
+    <Location name="BALCONY_MIDDLE" ticketCost="15.4" rows="1" seats="5"/>
+</config>

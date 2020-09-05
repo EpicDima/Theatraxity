@@ -1,0 +1,31 @@
+plugins {
+    id "war"
+    id "org.gretty" version "3.0.3"
+}
+
+group "com.epicdima.theatraxity"
+version "1.0-SNAPSHOT"
+
+allprojects {
+    apply plugin: "java"
+    
+    repositories {
+        jcenter()
+        mavenCentral()
+    }
+}
+
+gretty {
+    httpPort = 8080
+    contextPath = "/"
+}
+
+dependencies {
+    implementation project(":Lib:di")
+    implementation project(":Lib:controller")
+
+    implementation project(":domain")
+    implementation project(":dal")
+
+    implementation "com.google.code.gson:gson:2.8.6"
+}
