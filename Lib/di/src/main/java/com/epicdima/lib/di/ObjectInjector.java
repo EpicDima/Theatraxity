@@ -110,7 +110,10 @@ public final class ObjectInjector {
 
     private Object createObjectForInjection(Class<?> type, String name) throws ReflectiveOperationException {
         Map<Class<?>, Object> namedSingletons = context.singletons.get(name);
-        Object object = getSingleton(namedSingletons, type);
+        Object object = null;
+        if (namedSingletons != null) {
+            object = namedSingletons.get(type);
+        }
         if (object == null) {
             object = getImplementation(type, name);
             if (object == null) {
@@ -122,13 +125,6 @@ public final class ObjectInjector {
             invokePostConstruct(object.getClass(), object);
         }
         return object;
-    }
-
-    private Object getSingleton(Map<Class<?>, Object> namedSingletons, Class<?> cls) {
-        if (namedSingletons != null) {
-            return namedSingletons.get(cls);
-        }
-        return null;
     }
 
     private Object getImplementation(Class<?> type, String name) throws ReflectiveOperationException {

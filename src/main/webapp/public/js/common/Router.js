@@ -85,5 +85,8 @@ export default class Router {
                 return;
             }
         }
+        this.current = path;
+        document.title = getString("appName");
+        this.notFound();
     }
 }

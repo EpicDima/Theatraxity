@@ -31,7 +31,7 @@ class AuthorForm extends Form {
             {
                 name: "name",
                 placeholder: getString("inputName"),
-                minlength: 2,
+                minlength: 3,
                 maxlength: 100,
                 required: true
             }

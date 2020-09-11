@@ -4,6 +4,7 @@ import com.epicdima.theatraxity.domain.common.Codes;
 import com.epicdima.theatraxity.domain.common.HttpCodes;
 import com.epicdima.theatraxity.domain.common.Result;
 import com.epicdima.theatraxity.domain.dao.GenreDao;
+import com.epicdima.theatraxity.domain.dto.AuthorDto;
 import com.epicdima.theatraxity.domain.dto.GenreDto;
 import com.epicdima.theatraxity.domain.models.theatre.Genre;
 import com.epicdima.theatraxity.domain.models.user.User;
@@ -28,6 +29,10 @@ public final class ChangeGenreUseCase {
         }
         if (fromDao.isDeleted() && currentUser.isManager()) {
             return Result.failure(HttpCodes.FORBIDDEN, Codes.NOT_ALLOWED);
+        }
+        Result<GenreDto> validateResult = CreateGenreUseCase.validate(genre);
+        if (validateResult != null) {
+            return validateResult;
         }
         Genre forDao = fromDao.toBuilder().name(genre.name).build();
         Boolean updated = genreDao.update(forDao);

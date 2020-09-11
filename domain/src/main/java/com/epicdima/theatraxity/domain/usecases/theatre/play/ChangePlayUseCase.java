@@ -45,6 +45,10 @@ public final class ChangePlayUseCase {
         if (genre == null || genre.isDeleted()) {
             return Result.failure(HttpCodes.BAD_REQUEST, Codes.GENRE_NOT_FOUND);
         }
+        Result<PlayDto> validateResult = CreatePlayUseCase.validate(play);
+        if (validateResult != null) {
+            return validateResult;
+        }
         Play forDao = fromDao.toBuilder()
                 .name(play.name)
                 .description(play.description)

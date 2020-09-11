@@ -1,5 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <config>
-    <Location name="BALCONY_LEFT" ticketCost="10" rows="3" seats="5"/>
-    <Location name="BALCONY_MIDDLE" ticketCost="15.4" rows="1" seats="5"/>
+    <Location name="BALCONY_LEFT" ticketCost="6.5" rows="3" seats="4"/>
+    <Location name="BALCONY_MIDDLE" ticketCost="7" rows="4" seats="12"/>
+    <Location name="BALCONY_RIGHT" ticketCost="6.5" rows="3" seats="4"/>
+    <Location name="MEZZANINE_LEFT" ticketCost="8.5" rows="3" seats="4"/>
+    <Location name="MEZZANINE_MIDDLE" ticketCost="10" rows="4" seats="12"/>
+    <Location name="MEZZANINE_RIGHT" ticketCost="8.5" rows="3" seats="4"/>
+    <Location name="AMPHITHEATRE" ticketCost="9.5" rows="4" seats="10"/>
+    <Location name="BENOIR_LEFT" ticketCost="9" rows="1" seats="5"/>
+    <Location name="BENOIR_RIGHT" ticketCost="9" rows="1" seats="5"/>
+    <Location name="PARTERRE" ticketCost="9.75" rows="10" seats="20"/>
 </config>

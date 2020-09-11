@@ -24,8 +24,8 @@ public final class Order {
     private final Status status;
     private final boolean deleted;
 
-    public Order(int id, Presentation presentation, User buyer, Date date, User courier,
-                 Status status, boolean deleted) {
+    public Order(int id, Presentation presentation, User buyer, Date date,
+                 User courier, Status status, boolean deleted) {
         this.id = id;
         this.presentation = presentation;
         this.buyer = buyer;

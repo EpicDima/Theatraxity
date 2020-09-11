@@ -69,4 +69,9 @@ public final class Codes {
     public static final int INCORRECT_EMAIL_OR_PASSWORD = 54;
     public static final int USER_ROLE_NOT_SPECIFIED = 56;
     public static final int INCORRECT_PASSWORD = 57;
+
+    public static final int NOT_VALID_AUTHOR_NAME = 58;
+    public static final int NOT_VALID_GENRE_NAME = 59;
+    public static final int NOT_VALID_PLAY_NAME = 60;
+    public static final int NOT_VALID_PLAY_DESCRIPTION = 61;
 }

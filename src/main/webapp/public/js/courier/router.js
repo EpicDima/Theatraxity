@@ -16,7 +16,7 @@ export default function getCourierRouter() {
     }).addWithTitle("/orders", "orders", () => {
         openOrdersPage();
     }).addWithTitle("/order", "order", () => {
-        loadHtmlPage("/html/order.html", configureOrderPage());
+        loadHtmlPage("/html/order.html", configureOrderPage);
     }).addWithTitle("/presentations", "presentations", () => {
         openPresentationsPage();
     }).add("/", () => {

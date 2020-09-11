@@ -18,7 +18,8 @@ public final class Ticket {
     private final BigDecimal cost;
     private final boolean deleted;
 
-    public Ticket(int id, Order order, Location location, int row, int seat, BigDecimal cost, boolean deleted) {
+    public Ticket(int id, Order order, Location location, int row,
+                  int seat, BigDecimal cost, boolean deleted) {
         this.id = id;
         this.order = order;
         this.location = location;

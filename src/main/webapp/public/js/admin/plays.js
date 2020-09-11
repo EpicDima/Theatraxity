@@ -34,7 +34,7 @@ class PlayForm extends Form {
             {
                 name: "name",
                 placeholder: getString("inputTitle"),
-                minlength: 2,
+                minlength: 3,
                 maxlength: 100,
                 required: true
             },
@@ -42,7 +42,7 @@ class PlayForm extends Form {
                 name: "description",
                 placeholder: getString("inputDescription"),
                 minlength: 5,
-                maxlength: 300,
+                maxlength: 1024,
                 required: true
             },
             {

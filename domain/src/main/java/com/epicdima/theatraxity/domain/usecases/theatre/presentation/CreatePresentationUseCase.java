@@ -43,8 +43,10 @@ public final class CreatePresentationUseCase {
         if (presentationDao.selectByDate(presentationDate) != null) {
             return Result.failure(HttpCodes.BAD_REQUEST, Codes.DATE_ALREADY_CONTAINS_PRESENTATION);
         }
-        Presentation fromDao = presentationDao.insert(PresentationDto.to(presentation));
+        presentation.date.setTime(presentation.date.getTime() + 86_400_000);
+        Presentation fromDao = presentationDao.insert(PresentationDto.to(presentation)) ;
         if (fromDao != null) {
+            fromDao.getDate().setTime(presentationDate.getTime() - 86_400_000);
             return Result.success(PresentationDto.from(fromDao));
         } else {
             return Result.failure(HttpCodes.SERVER_ERROR, Codes.UNEXPECTED_ERROR);

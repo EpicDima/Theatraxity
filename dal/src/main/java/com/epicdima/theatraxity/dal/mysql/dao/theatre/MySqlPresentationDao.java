@@ -12,6 +12,7 @@ import com.epicdima.theatraxity.domain.models.theatre.Presentation;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Locale;
 
 /**
  * @author EpicDima
@@ -19,7 +20,7 @@ import java.util.Date;
 @Singleton
 public final class MySqlPresentationDao extends MySqlBaseDao<PresentationData, Presentation> implements PresentationDao {
 
-    private static final SimpleDateFormat DATE_CONVERTER = new SimpleDateFormat("yyyy-MM-dd");
+    private static final SimpleDateFormat DATE_CONVERTER = new SimpleDateFormat("yyyy-MM-dd", Locale.US);
 
     @Inject
     public MySqlPresentationDao(ConnectionPool connectionPool,

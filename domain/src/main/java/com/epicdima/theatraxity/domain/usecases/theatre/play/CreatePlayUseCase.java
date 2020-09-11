@@ -6,6 +6,7 @@ import com.epicdima.theatraxity.domain.common.Result;
 import com.epicdima.theatraxity.domain.dao.AuthorDao;
 import com.epicdima.theatraxity.domain.dao.GenreDao;
 import com.epicdima.theatraxity.domain.dao.PlayDao;
+import com.epicdima.theatraxity.domain.dto.GenreDto;
 import com.epicdima.theatraxity.domain.dto.PlayDto;
 import com.epicdima.theatraxity.domain.models.theatre.Author;
 import com.epicdima.theatraxity.domain.models.theatre.Genre;
@@ -38,11 +39,33 @@ public final class CreatePlayUseCase {
         if (genre == null || genre.isDeleted()) {
             return Result.failure(HttpCodes.BAD_REQUEST, Codes.GENRE_NOT_FOUND);
         }
+        Result<PlayDto> validateResult = validate(play);
+        if (validateResult != null) {
+            return validateResult;
+        }
         Play fromDao = playDao.insert(PlayDto.to(play));
         if (fromDao != null) {
             return Result.success(PlayDto.from(fromDao));
         } else {
             return Result.failure(HttpCodes.SERVER_ERROR, Codes.UNEXPECTED_ERROR);
         }
+    }
+
+    static Result<PlayDto> validate(PlayDto play) {
+        if (play.name == null) {
+            return Result.failure(HttpCodes.BAD_REQUEST, Codes.NOT_VALID_PLAY_NAME);
+        }
+        if (play.description == null) {
+            return Result.failure(HttpCodes.BAD_REQUEST, Codes.NOT_VALID_PLAY_DESCRIPTION);
+        }
+        play.name = play.name.trim();
+        play.description = play.description.trim();
+        if (play.name.length() < 3 || play.name.length() > 100) {
+            return Result.failure(HttpCodes.BAD_REQUEST, Codes.NOT_VALID_PLAY_NAME);
+        }
+        if (play.description.length() < 5 || play.description.length() > 1024) {
+            return Result.failure(HttpCodes.BAD_REQUEST, Codes.NOT_VALID_PLAY_DESCRIPTION);
+        }
+        return null;
     }
 }

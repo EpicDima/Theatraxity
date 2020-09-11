@@ -1,4 +1,4 @@
-package com.epicdima.theatraxity.domain.models.utils;
+package com.epicdima.theatraxity.domain.utils;
 
 import javax.crypto.SecretKeyFactory;
 import javax.crypto.spec.PBEKeySpec;

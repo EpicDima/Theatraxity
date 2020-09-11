@@ -50,6 +50,7 @@ public final class ChangePresentationUseCase {
         if (presentationDao.selectByDate(presentationDate) != null) {
             return Result.failure(HttpCodes.BAD_REQUEST, Codes.DATE_ALREADY_CONTAINS_PRESENTATION);
         }
+        presentationDate.setTime(presentationDate.getTime() + 86_400_000);
         Presentation forDao = fromDao.toBuilder()
                 .date(presentationDate)
                 .play(play)
@@ -57,6 +58,7 @@ public final class ChangePresentationUseCase {
         Boolean updated = presentationDao.update(forDao);
         if (updated != null) {
             if (updated) {
+                forDao.getDate().setTime(presentationDate.getTime() - 86_400_000);
                 return Result.success(PresentationDto.from(forDao));
             } else {
                 return Result.failure(HttpCodes.OK, Codes.NO_PRESENTATION_CHANGE);

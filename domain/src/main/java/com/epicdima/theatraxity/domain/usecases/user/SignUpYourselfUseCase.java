@@ -6,7 +6,7 @@ import com.epicdima.theatraxity.domain.dao.UserDao;
 import com.epicdima.theatraxity.domain.dto.UserDto;
 import com.epicdima.theatraxity.domain.models.user.User;
 import com.epicdima.theatraxity.domain.common.Result;
-import com.epicdima.theatraxity.domain.models.utils.SecurityUtils;
+import com.epicdima.theatraxity.domain.utils.SecurityUtils;
 
 import java.security.NoSuchAlgorithmException;
 import java.security.spec.InvalidKeySpecException;

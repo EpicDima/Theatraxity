@@ -29,6 +29,10 @@ public final class ChangeAuthorUseCase {
         if (fromDao.isDeleted() && currentUser.isManager()) {
             return Result.failure(HttpCodes.FORBIDDEN, Codes.NOT_ALLOWED);
         }
+        Result<AuthorDto> validateResult = CreateAuthorUseCase.validate(author);
+        if (validateResult != null) {
+            return validateResult;
+        }
         Author forDao = fromDao.toBuilder().name(author.name).build();
         Boolean updated = authorDao.update(forDao);
         if (updated != null) {

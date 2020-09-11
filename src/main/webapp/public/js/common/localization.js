@@ -74,6 +74,11 @@ const language = {
         "56": "Не указана роль пользователя",
         "57": "Неправильный пароль",
 
+        "58": "Некорректное имя автора",
+        "59": "Некорректное название жанра",
+        "60": "Некорректное название спектакля",
+        "61": "Некорректное описание спектакля",
+
         "info": "Theatraxity - это информационная система для театра, предоставляющая огромное количество функций...",
         "notFoundPage": "Страница не найдена",
 
@@ -125,7 +130,7 @@ const language = {
         "signUpButton": "Зарегистрироваться",
 
         "repeatPassword": "Повторите пароль",
-        "inputPasswordRepeat": "Введите пароль",
+        "inputPasswordRepeat": "Повторите пароль",
         "notSamePasswords": "Пароли не совпадают",
 
         "authorName": "Имя автора",
@@ -184,7 +189,7 @@ const language = {
         "seat": "Место",
         "delete": "Удалить",
         "totalCost": "Полная стоимость",
-        "about": "Сделал Дашкевич Дима (сам, честно, не обманываю, ну поверьте пожалуйста, умоляю)",
+        "about": "Сделал Дашкевич Дима",
         "selectLanguage": "Выбрать язык",
         "ru": "Русский",
         "en": "English",
@@ -259,6 +264,11 @@ const language = {
         "54": "Incorrect email or password",
         "56": "User role not specified",
         "57": "Wrong password",
+
+        "58": "Invalid author name",
+        "59": "Incorrect genre name",
+        "60": "Incorrect name of the play",
+        "61": "Incorrect description of the play",
 
         "info": "Theatraxity is an information system for the theater that provides a huge number of functions...",
         "notFoundPage": "Page not found",
@@ -370,7 +380,7 @@ const language = {
         "seat": "Place",
         "delete": "Delete",
         "totalCost": "Full price",
-        "about": "Dima Dashkevich",
+        "about": "Made by Dima Dashkevich",
         "selectLanguage": "Select language",
         "ru": "Русский",
         "en": "English",

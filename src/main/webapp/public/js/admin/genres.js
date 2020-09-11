@@ -31,7 +31,7 @@ class GenreForm extends Form {
             {
                 name: "name",
                 placeholder: getString("inputTitle"),
-                minlength: 2,
+                minlength: 3,
                 maxlength: 100,
                 required: true
             }
